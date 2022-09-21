@@ -1,2 +1,4 @@
 # musicbot-MICROWAVE
-Music Bot 2022 Fall
+Musicbot Fall 2021 Software suite
+
+Designed to run on an RaspberryPi
