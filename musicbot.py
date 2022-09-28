@@ -1,7 +1,7 @@
 # import libraries
 import time
 
-# from adafruit_servokit import ServoKit
+from adafruit_servokit import ServoKit
 from midi import *
 from songChoice import *
 
@@ -20,7 +20,7 @@ def __init__():
 __init__()
 
 # set channels for the ServoKit
-# kit = ServoKit(channels=16)
+kit = ServoKit(channels=16)
 
 # all servos can be rotated 180 degrees, the min and max, also known as the on and off states of the servos is written below :
 
@@ -43,5 +43,8 @@ if (midiR.range) > 13:
 
 def play_song():
     for msg in midiR.messages:
-        # kit.servo[msg.note - midiR.min].angle = (off) + (msg.on * on) # this is cursed
-        time.sleep(msg.time)
+        print(msg)
+        kit.servo[msg.note - midiR.min].angle = (off) + (msg.on * on) # this is cursed
+        time.sleep(msg.len)
+
+play_song()
