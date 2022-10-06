@@ -44,7 +44,7 @@ if (midiR.range) > 13:
 def play_song():
     for msg in midiR.messages:
         print(msg)
-        kit.servo[msg.note - midiR.min].angle = (off) + (msg.on * on) # this is cursed
         time.sleep(msg.len)
+        kit.servo[msg.note - midiR.min].angle = (off) + (msg.on * on) # this is cursed
 
 play_song()
